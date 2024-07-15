@@ -1,0 +1,4 @@
+How web works?
+temos um client, no browser
+entra em um url, um dominio que é um IP.
+o cliente manda uma requisacao para o servidor

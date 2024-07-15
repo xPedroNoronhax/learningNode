@@ -1,0 +1,59 @@
+http
+O módulo http permite a criação de servidores web e a realização de requisições HTTP. Com ele, você pode configurar um servidor para escutar requisições em uma porta específica e responder com dados ou páginas web. É essencial para construir aplicações web e APIs.
+
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World!\n');
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+
+https
+O módulo https é similar ao http, mas permite a comunicação segura usando o protocolo HTTPS. É utilizado para criar servidores que precisam garantir a segurança e a criptografia dos dados transmitidos entre o cliente e o servidor.
+
+const https = require('https');
+const fs = require('fs');
+
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+
+https.createServer(options, (req, res) => {
+  res.writeHead(200);
+  res.end('Hello Secure World!\n');
+}).listen(3000);
+
+fs
+O módulo fs (File System) permite a interação com o sistema de arquivos. Com ele, você pode ler, escrever, atualizar e excluir arquivos e diretórios. É muito útil para manipulação de dados persistentes em discos.
+
+const fs = require('fs');
+
+// Escrevendo em um arquivo
+fs.writeFile('example.txt', 'Hello, World!', (err) => {
+  if (err) throw err;
+  console.log('File has been saved!');
+});
+
+path
+O módulo path facilita a manipulação e resolução de caminhos de arquivos e diretórios. Ele ajuda a criar caminhos seguros e independentes de plataforma, evitando erros comuns relacionados a diretórios e arquivos.
+
+const path = require('path');
+
+const filePath = path.join(__dirname, 'example.txt');
+console.log(filePath);  // Exibe o caminho completo até o arquivo example.txt
+
+os
+O módulo os fornece informações sobre o sistema operacional onde o Node.js está sendo executado. Ele pode retornar detalhes como o tipo de sistema operacional, arquitetura da CPU, quantidade de memória livre, etc.
+
+const os = require('os');
+
+console.log(`System Architecture: ${os.arch()}`);
+console.log(`Total Memory: ${os.totalmem()}`);
+console.log(`Free Memory: ${os.freemem()}`);
+console.log(`Platform: ${os.platform()}`);
