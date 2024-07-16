@@ -3,3 +3,6 @@ facilita a escrita de codigos.
 INSTALL 
 
  npm install --save express
+
+ instalando um package que consegue ler o body e dar uma resposta em string
+ npm install --save body-parser
