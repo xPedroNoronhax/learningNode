@@ -1,0 +1,11 @@
+temos o client = broser (mobilde,desktop...)usando html,css,js para criar uma pagina
+esse cliente faz uma requisacao para um site.
+esse site esta armazenado em um servidor
+o client em forma de codigo, solicita uma resposta para o servidorr,
+normalmente ele retorna um arquivo html. mas nao necessariamente.
+
+dentro do servidor, fazemos coisas que por seguranca nao é possivel dentro do broswer.
+como fetch, armazenar dados, autenticacao,validacao...
+
+o cliente nao acessa o servidor diretamente, por isso há o node.js
+
