@@ -1,0 +1,59 @@
+// const http = require('http'); // Importa o módulo HTTP para criar um servidor
+// const fs = require('fs'); // Importa o módulo de sistema de arquivos para trabalhar com arquivos
+//importa o express
+const express = require("express");
+
+const adminRoutes = require("./routes/admin");
+
+const shopRoutes = require("./routes/shop");
+const bodyParser = require("body-parser");
+
+//criando uma express aplication
+const app = express();
+
+//utilizando o body parser para obter uma resposta de body
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(adminRoutes);
+
+app.use(shopRoutes);
+
+//#primeiro middleware
+// app.use((req,res, next) => {
+//     console.log('in the middleware');
+//     next(); // permite que a requisicao vá para o próximo middleware
+// })
+//só envie next se não quiser enviar uma resposta ao servidor
+
+// app.use("/", (req, res, next) => {
+//   console.log("this always works");
+//   next();
+// });
+
+// criar um middleware que adiciona um produto e envia para /product
+// app.use("/add-product", (req, res, next) => {
+//   console.log("in another middleware");
+//   res.send(
+//     '<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add product</button></input</form'
+//   );
+// });
+
+// //middleware de product
+// app.post("/product", (req, res, next) => {
+//   //capturar o que estava dentro do input em add-product
+//   console.log(req.body);
+//   //redireciona para a pagina /
+//   res.redirect("/");
+// });
+
+//#segundo middleware
+// app.use((req, res, next) => {
+//   console.log("in another middleware");
+//   res.send("<h1>Hello from express!</h1>");
+// });
+// // Cria o servidor HTTP
+// const server = http.createServer(app)
+
+// // Faz o servidor ouvir na porta 3000
+// server.listen(3000);
+app.listen(3000);
