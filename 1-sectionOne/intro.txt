@@ -1,5 +1,0 @@
-node é o javascript que roda em outras aplicacoes, fora da web.
-é usado o motor v8 do google, para compilar o codigo e transformalo em codigo de maquina
-v8 é escrito em c++ 
-nodejs pega esse codigo, e começa a ler,escrever arquivos, oq nao é possivel na web.
-basicamente é rodar javascript fora do browser, rodar dentro do seu pc, e  adiciona mais features ao js para que voce possa fazer mais coisas.
